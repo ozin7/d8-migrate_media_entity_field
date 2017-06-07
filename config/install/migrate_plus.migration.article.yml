@@ -1,0 +1,59 @@
+---
+id: article
+label: Import Article nodes
+migration_group: node_with_media
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - media_migrate
+
+destination:
+  plugin: entity:node
+
+source:
+  plugin: csv
+  path: public://csv/articles.csv
+
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      PAGE_TITLE: Page title
+    2:
+      ALTERNATIVE_TITLE: Alternative title
+    3:
+      IMAGE_NAME: Image name
+    4:
+      IMAGE_LINK: Image URI
+
+process:
+  type:
+    plugin: default_value
+    default_value: article
+
+  title:
+    -
+      plugin: empty_title
+      source:
+        - PAGE_TITLE
+        - ALTERNATIVE_TITLE
+
+  field_image:
+    plugin: media_entity
+    source:
+      - IMAGE_LINK
+      - IMAGE_NAME
+    destination: public://article
+    bundle: image
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  status:
+    plugin: default_value
+    default_value: 1

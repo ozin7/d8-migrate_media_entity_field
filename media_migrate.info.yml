@@ -1,0 +1,10 @@
+name: media_migrate
+type: module
+description: Custom migration for Media
+core: 8.x
+package: Custom
+dependencies:
+  - migrate
+  - migrate_tools
+  - migrate_plus
+  - migrate_source_csv
