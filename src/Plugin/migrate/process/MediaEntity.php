@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\rtd_migrate\Plugin\migrate\process;
+namespace Drupal\media_migrate\Plugin\migrate\process;
 
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;

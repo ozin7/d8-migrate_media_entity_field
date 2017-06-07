@@ -1,8 +1,7 @@
 ## Example of migration Media Entity with Node from the CSV file.
 This is work example of migrations Articles nodes which have the field_image(Entity reference to the Media Entity).
 
-CSV file example
-Colons can be used to align columns.
+CSV file example:
 
 | Id| Title     | Alternative title  | Image name|Image URL                               |
 | --|:---------:|:------------------:|:---------:| --------------------------------------:|
